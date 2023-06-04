@@ -1,6 +1,6 @@
-# Python Code Execution Guide
+# Ninokuni AutoRevive
 
-This guide provides instructions on how to successfully run the provided Python code. The code utilizes the `pyautogui` and `keyboard` libraries to automate mouse and keyboard actions.
+This guide provides instructions on how to successfully run the script. The code utilizes the `pyautogui` and `keyboard`  python libraries to automate mouse and keyboard actions.
 
 ## Prerequisites
 Before running the code, ensure that you have the following prerequisites installed:
@@ -27,9 +27,6 @@ To run the code, follow these steps:
 3. Run the following command:
 
 ```python reviveNino.py```
-
-
-Replace `<filename>` with the name of the Python code file.
 
 ## Usage Instructions
 
@@ -62,4 +59,4 @@ Ensure that the Python code window is active when pressing the function keys to 
 
 Feel free to modify the code to meet your specific requirements.
 
-**Disclaimer**: This code may perform automated actions on your system. Use it responsibly and at your own risk.
+**Disclaimer**: This code may perform automated actions on your system. Take notes that the provided coordinates, pixel color and position are based on a 2560x1080 monintor. Use it responsibly and at your own risk.
