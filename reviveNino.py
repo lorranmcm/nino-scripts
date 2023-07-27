@@ -1,6 +1,7 @@
 import pyautogui
 import time
 import keyboard
+from datetime import datetime
 
 
 PIXEL_COLOR_FILENAME = "pixel_color.txt"
@@ -93,6 +94,8 @@ def main_loop():
         target_color = read_pixel_color(PIXEL_COLOR_FILENAME)
 
         if pixel_color == target_color:
+            now = datetime.now()
+            print('Morreu, ', now)
             coordinates = read_coordinates(COORDINATES_FILENAME)
             if coordinates:
                 click_coordinates(coordinates)
@@ -102,6 +105,7 @@ def main_loop():
             new_pixel_color = pyautogui.pixel(
                 new_pixel_to_monitor[0], new_pixel_to_monitor[1]
             )
+            print(new_pixel_to_monitor, new_pixel_color)
             save_pixel_color(new_pixel_color, PIXEL_COLOR_FILENAME)
             save_pixel_to_monitor(
                 {"x": new_pixel_to_monitor[0], "y": new_pixel_to_monitor[1]},
@@ -130,6 +134,7 @@ def main_loop():
 
 
 # Main program
+print("Bot inicializado!")
 while True:
     main_loop()
     if keyboard.is_pressed("f8"):
