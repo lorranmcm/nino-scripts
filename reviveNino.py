@@ -70,19 +70,19 @@ def save_pixel_to_monitor(coordinates, filename):
 def perform_actions():
     # Clicks
     pyautogui.click(x=2536, y=42)
-    time.sleep(1)
+    time.sleep(2)
     pyautogui.click(x=2512, y=387)
-    time.sleep(1)
+    time.sleep(2)
     pyautogui.click(x=2427, y=453)
-    time.sleep(1)
+    time.sleep(2)
     pyautogui.click(x=1709, y=535)
-    time.sleep(1)
+    time.sleep(2)
     pyautogui.click(x=2001, y=618)
     time.sleep(10)
     pyautogui.press("f")
-    time.sleep(1)
+    time.sleep(2)
     pyautogui.click(x=2518, y=331)
-    time.sleep(1)
+    time.sleep(2)
     pyautogui.click(x=2233, y=998)
 
 
@@ -95,7 +95,7 @@ def main_loop():
 
         if pixel_color == target_color:
             now = datetime.now()
-            print('Morreu, ', now)
+            print("Morreu, ", now)
             coordinates = read_coordinates(COORDINATES_FILENAME)
             if coordinates:
                 click_coordinates(coordinates)
@@ -113,18 +113,18 @@ def main_loop():
             )
             break
 
-        if keyboard.is_pressed("f6"):
-            coordinates = read_coordinates(COORDINATES_FILENAME)
-            if coordinates:
-                click_coordinates(coordinates)
-            break
-
-        if keyboard.is_pressed("f7"):
+        if keyboard.is_pressed("q"):
             position = pyautogui.position()
             coordinates = read_coordinates(COORDINATES_FILENAME)
             coordinates.append({"x": position.x, "y": position.y})
             save_coordinates(coordinates, COORDINATES_FILENAME)
             time.sleep(0.2)
+
+        if keyboard.is_pressed("e"):
+            coordinates = read_coordinates(COORDINATES_FILENAME)
+            if coordinates:
+                click_coordinates(coordinates)
+            break
 
         if keyboard.is_pressed("f8"):
             break
